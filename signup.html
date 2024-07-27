@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlogging Sign-Up Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 2% auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="file"] {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up for Vlogging</h1>
+        <form id="signup-form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Vlog Details</legend>
+                <label for="channel-description">Channel Description:</label>
+                <textarea id="channel-description" name="channel-description" rows="4" required></textarea>
+                
+                <label for="genre">Preferred Genre:</label>
+                <select id="genre" name="genre">
+                    <option value="travel">Travel</option>
+                    <option value="tech">Tech</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="food">Food</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="upload-frequency">Upload Frequency:</label>
+                <select id="upload-frequency" name="upload-frequency">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="bi-weekly">Bi-Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="other">Other</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Profile Picture</legend>
+                <label for="profile-picture">Upload Profile Picture:</label>
+                <input type="file" id="profile-picture" name="profile-picture">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Social Media Links (Optional)</legend>
+                <label for="instagram">Instagram:</label>
+                <input type="text" id="instagram" name="instagram">
+                
+                <label for="twitter">Twitter:</label>
+                <input type="text" id="twitter" name="twitter">
+                
+                <label for="youtube">YouTube Channel:</label>
+                <input type="text" id="youtube" name="youtube">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Terms and Conditions</legend>
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the Terms and Conditions and Privacy Policy.
+                </label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Verification</legend>
+                <label for="captcha">CAPTCHA Verification:</label>
+                <!-- Simple placeholder for CAPTCHA -->
+                <input type="text" id="captcha" name="captcha" placeholder="Complete CAPTCHA" required>
+            </fieldset>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Basic form validation
+            const fullName = document.getElementById('full-name').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const terms = document.getElementById('terms').checked;
+
+            if (fullName === '' || username === '' || email === '' || password === '' || !terms) {
+                alert('Please fill out all required fields and agree to the terms.');
+                return;
+            }
+
+            // You can add more validation or data handling here
+
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
+
